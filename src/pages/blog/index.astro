@@ -32,23 +32,36 @@ import { articles } from "../../lib/list";
     <meta name="language" content="English" />
     <link rel="canonical" href={`${GLOBAL.rootUrl}/blog`} />
   </Fragment>
+
   <Section class="my-8">
     <div class="flex items-center gap-4 pt-8 pb-16">
       <h1 class="font-display text-3xl sm:text-4xl leading-loose">{GLOBAL.articlesName}</h1>
     </div>
     <ul>
       {
-        articles.map((project) => (
-          <li>
-            <ArticleSnippet
-              title={project.title}
-              description={project.description}
-              duration={`${project.time} min`}
-              url={project.filename}
-              timestamp={project.timestamp}
-            />
-          </li>
-        ))
+        articles.length === 0 ? (
+          <div class="flex flex-col items-center justify-center py-16">
+            <svg width="100" height="100" fill="none" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" class="mb-4 text-gray-400 dark:text-gray-600">
+              <rect x="16" y="32" width="64" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
+              <rect x="24" y="40" width="48" height="24" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M24 52l12 8h24l12-8" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="32" y="24" width="32" height="8" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="text-lg text-gray-500 dark:text-gray-400">Sorry, no blog posts yet.</span>
+          </div>
+        ) : (
+          articles.map((project) => (
+            <li>
+              <ArticleSnippet
+                title={project.title}
+                description={project.description}
+                duration={`${project.time} min`}
+                url={project.filename}
+                timestamp={project.timestamp}
+              />
+            </li>
+          ))
+        )
       }
     </ul>
   </Section>
