@@ -33,16 +33,16 @@ cd astro-personal
 
 ### 2. Install Dependencies
 
-> **Note:** This project uses `pnpm` for package management.
+> **Note:** This project uses `bun` for package management.
 
 ```bash
-pnpm install
+bun install
 ```
 
 ### 3. Run the Development Server
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 Visit [localhost:4321](http://localhost:4321) to view your site locally.
