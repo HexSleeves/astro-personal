@@ -1,76 +1,115 @@
-![Zaggonaut, a retro-inspired theme for Astro.](./images/README.png)
+<p align="center">
+  <img src="./images/README.png" alt="Personal Website Screenshot" width="400"/>
+</p>
 
-Zaggonaut is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and of course, Astro.
+# Jacob LeCoq's Personal Website & Blog
 
-## Getting Started
+Welcome! This is my personal website and blog, built with [Astro](https://astro.build/) and styled using a retro-inspired Zaggonaut theme. Here, I share my projects, articles, and thoughts on web development, tech, and more.
 
-[View the demo](https://zaggonaut.dev) or [view the source code](https://github.com/RATIU5/zaggonaut).
+**Live site:** [astro-personal-75h4bqxsm-jacob-lecoqs-projects.vercel.app](https://astro-personal-75h4bqxsm-jacob-lecoqs-projects.vercel.app/)
 
-Alternatively, you can create a new Astro project with Zaggonaut like this:
-
-```bash
-# pnpm
-pnpm create astro@latest --template RATIU5/zaggonaut
-```
-
-> [!IMPORTANT]  
-> Currently, `pnpm` is the only supported package manager due to `pnpm` throwing peer-dependency conflicts.
+---
 
 ## Features
 
-- Dark & light mode
-- Customizable colors
-- 100 / 100 Lighthouse score
-- Fully accessible
-- Fully responsive
-- Type-safe
-- SEO-friendly
+- ✨ Retro-inspired, fully responsive design
+- 🌗 Dark & light mode
+- 🎨 Easily customizable colors and text
+- 🧑‍💻 TypeScript & TailwindCSS
+- 🏆 100/100 Lighthouse score
+- ♿ Accessible and SEO-friendly
+- 📝 Blog and project sections
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/astro-personal.git
+cd astro-personal
+```
+
+### 2. Install Dependencies
+
+> **Note:** This project uses `pnpm` for package management.
+
+```bash
+pnpm install
+```
+
+### 3. Run the Development Server
+
+```bash
+pnpm dev
+```
+
+Visit [localhost:4321](http://localhost:4321) to view your site locally.
+
+---
 
 ## Customization
 
-The entire theme is fully customizable. The theme is setup a specific way to make it easy to customize.
+### Site Metadata & Text
 
-### Colors
-
-You can customize the colors of the theme by editing the `src/styles/global.css` file.
-This file uses Tailwind CSS and CSS variables to customize the colors of the theme.
-Zaggonaut uses the following CSS variables:
-
-- `--color-zag-dark`: The dark color of the theme
-- `--color-zag-light`: The light color of the theme
-- `--color-zag-dark-muted`: The dark color of the theme with a slight opacity
-- `--color-zag-light-muted`: The light color of the theme with a slight opacity
-- `--color-zag-accent-light`: The light accent color of the theme
-- `--color-zag-accent-light-muted`: The light accent color of the theme with a slight opacity
-- `--color-zag-accent-dark`: The dark accent color of the theme
-- `--color-zag-accent-dark-muted`: The dark accent color of the theme with a slight opacity
-
-### Text
-
-You can customize the text of the theme by editing the `src/lib/variables.ts` file.
-This file contains all of the text used throughout the theme.
-
-For example, you can change the `username` variable to your own username and everywhere the username is used will be replaced with your username.
+All site metadata (name, social links, descriptions, menu, etc.) is managed in [`src/lib/variables.ts`](src/lib/variables.ts).
+Update this file to personalize your username, profile image, social links, blog/project titles, and more.
 
 ```typescript
 export const GLOBAL = {
-  // Site metadata
-  username: "zaggonaut-fan123",
-
-  // ...
-
-  // Profile image
-  profileImage: "profile.webp",
-
-  // Menu items
-  menu: {
-    home: "/",
-    projects: "/projects",
-    blog: "/blog",
-  }
+  username: "HexSleeves",
+  rootUrl: "https://hex-sleeves.dev",
+  shortDescription: "Fullstack Developer",
+  // ...more fields
 };
 ```
 
-## Ready To Try?
+### Colors & Theme
 
-Check out [the theme website](https://zaggonaut.dev) to give it a spin!
+Colors are managed via CSS variables in [`src/styles/global.css`](src/styles/global.css).
+You can adjust the following variables to match your style:
+
+- `--color-zag-dark`
+- `--color-zag-light`
+- `--color-zag-dark-muted`
+- `--color-zag-light-muted`
+- `--color-zag-accent-light`
+- `--color-zag-accent-light-muted`
+- `--color-zag-accent-dark`
+- `--color-zag-accent-dark-muted`
+
+These are set using Tailwind's color palette, but you can override them for a unique look.
+
+---
+
+## Project Structure
+
+- `src/pages/` — Main site pages (`/`, `/blog`, `/projects`)
+- `src/components/` — Reusable UI components
+- `src/lib/variables.ts` — Site-wide text and metadata
+- `src/styles/global.css` — Global styles and theme variables
+
+---
+
+## Deployment
+
+This site is deployed on [Vercel](https://vercel.com/).
+You can deploy your own fork by connecting your repo to Vercel and following their setup instructions.
+
+---
+
+## License
+
+MIT
+
+---
+
+## Credits
+
+- [Astro](https://astro.build/)
+- [Zaggonaut Theme](https://github.com/RATIU5/zaggonaut) (used as a base and customized for this site)
+
+---
+
+Let me know if you want to further personalize or add sections (e.g., contributing, FAQ, etc.)!
