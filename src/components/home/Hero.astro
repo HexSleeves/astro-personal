@@ -1,16 +1,22 @@
 ---
+import { Image } from 'astro:assets';
 import { GLOBAL } from "../../lib/variables";
+import profileImage from '../../../public/animated_me.png';
 ---
 
 <div class="flex flex-col items-center sm:flex-row gap-8">
-  <img
-    src={GLOBAL.profileImage}
+  <Image
+    src={profileImage}
     alt={GLOBAL.username}
+    width={160}
+    height={160}
+    quality={80}
+    format="webp"
     class="rounded-full max-w-40 w-40 h-40 mb-4 z-0 grayscale"
   />
   <div>
     <h1
-      class="text-3xl sm:text-4xl font-display font-semibold opsz text-center sm:text-left"
+      class="text-3xl sm:text-4xl font-display font-semibold opsz text-center sm:text-left zag-accent"
     >
       {GLOBAL.username}
     </h1>

@@ -1,3 +1,6 @@
+// Re-export component types
+export type * from '../types/components';
+
 export type ProjectFrontmatter = {
   /**
    * The title of the project

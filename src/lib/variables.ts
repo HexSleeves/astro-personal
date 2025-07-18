@@ -45,3 +45,30 @@ export const GLOBAL = {
     blog: "/blog",
   },
 };
+
+// SEO and structured data
+export const SEO = {
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: GLOBAL.username,
+    jobTitle: GLOBAL.shortDescription,
+    description: GLOBAL.longDescription,
+    url: GLOBAL.rootUrl,
+    image: `${GLOBAL.rootUrl}/${GLOBAL.profileImage}`,
+    sameAs: [
+      GLOBAL.githubProfile,
+      GLOBAL.twitterProfile,
+      GLOBAL.linkedinProfile,
+    ].filter(Boolean),
+    knowsAbout: [
+      "Web Development",
+      "Full Stack Development",
+      "TypeScript",
+      "JavaScript",
+      "Astro",
+      "React",
+      "TailwindCSS",
+    ],
+  },
+};

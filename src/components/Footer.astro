@@ -15,7 +15,7 @@ const year = date.getFullYear();
       <ul class="flex flex-col gap-2">
         {Object.entries(GLOBAL.menu).map((i) => (
           <li>
-            <Anchor url={i[1]}>{i[0]}</Anchor>
+            <Anchor url={i[1]} class="zag-link-accent" >{i[0]}</Anchor>
           </li>
         ))}
       </ul>
@@ -32,8 +32,9 @@ const year = date.getFullYear();
         >
         <p id="quote" class="zag-text zag-transition"></p>
       </div>
+
       <div class="flex flex-row sm:flex-col gap-4">
-        {GLOBAL.githubProfile && (<Anchor external url={GLOBAL.githubProfile} aria-label="GitHub Profile">
+        {GLOBAL.githubProfile && (<Anchor external url={GLOBAL.githubProfile} aria-label="GitHub Profile" class="zag-accent-hover">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -46,7 +47,7 @@ const year = date.getFullYear();
             ></path>
           </svg>
         </Anchor>)}
-        {GLOBAL.twitterProfile && (<Anchor external url={GLOBAL.twitterProfile} aria-label="Twitter Profile">
+        {GLOBAL.twitterProfile && (<Anchor external url={GLOBAL.twitterProfile} aria-label="Twitter Profile" class="zag-accent-hover">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -60,7 +61,7 @@ const year = date.getFullYear();
           </svg>
         </Anchor>)}
         {GLOBAL.linkedinProfile && (
-          <Anchor external url={GLOBAL.linkedinProfile} aria-label="LinkedIn Profile">
+          <Anchor external url={GLOBAL.linkedinProfile} aria-label="LinkedIn Profile" class="zag-accent-hover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
