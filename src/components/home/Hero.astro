@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import { GLOBAL } from "../../lib/variables";
-import profileImage from '../../../public/animated_me.png';
+import profileImage from "../../../public/animated_me.png";
 ---
 
 <div class="flex flex-col items-center sm:flex-row gap-8">
@@ -23,7 +23,7 @@ import profileImage from '../../../public/animated_me.png';
     <h2
       class="text-center text-xl sm:text-2xl font-mono font-medium sm:text-left"
     >
-      <p set:html={GLOBAL.shortDescription}/>
+      <p set:html={GLOBAL.shortDescription} />
     </h2>
   </div>
 </div>

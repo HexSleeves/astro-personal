@@ -20,7 +20,7 @@ type MarkdownData<T extends object> = {
 export const processContentInDir = async <T extends object, K>(
   contentType: "projects" | "blog",
   processFn: (data: MarkdownData<T>) => K,
-  dir: string = process.cwd()
+  dir: string = process.cwd(),
 ) => {
   const files = await fs.readdir(dir + `/src/pages/${contentType}`);
   const markdownFiles = files
@@ -89,7 +89,7 @@ export const processArticleDate = (timestamp: string) => {
  */
 export const generateSourceUrl = (
   sourceUrl: string,
-  contentType: "projects" | "blog"
+  contentType: "projects" | "blog",
 ) => {
   return `${GLOBAL.rootUrl}/${contentType}/${sourceUrl}`;
 };

@@ -11,6 +11,8 @@ This project uses **bun** as the package manager. Common development commands:
 - `bun build` - Build the project for production
 - `bun preview` - Preview the production build
 
+Note: No linting or testing scripts are configured in package.json.
+
 ## Project Architecture
 
 This is an Astro personal website/blog using TypeScript and TailwindCSS with a retro-inspired Zaggonaut theme.
@@ -48,3 +50,23 @@ This is an Astro personal website/blog using TypeScript and TailwindCSS with a r
 - Components are primarily `.astro` files with optional TypeScript frontmatter
 - Featured articles/projects are managed through the `src/lib/featured.ts` module
 - Dark/light mode is implemented via CSS custom properties and theme switching
+
+### Zaggonaut Theme System
+
+This project uses a custom "Zaggonaut" retro theme implemented through:
+
+- **CSS Custom Properties**: Theme colors defined in `src/styles/global.css` using CSS variables like `--color-zag-dark`, `--color-zag-light`, etc.
+- **Utility Classes**: Custom utility classes like `.zag-bg`, `.zag-text`, `.zag-accent` for consistent theming
+- **Typography**: Custom fonts including "press-start-2p" for display text and "Literata Variable" for body text
+- **Responsive Design**: Theme adapts automatically between light and dark modes using CSS `:where(.dark, .dark *)` selectors
+
+### Content Frontmatter Structure
+
+Both blog posts and projects use TypeScript-defined frontmatter schemas:
+
+- **Projects**: Require `title`, `description`, `timestamp`, `filename`. Optional: `tags`, `githubUrl`, `liveUrl`, `featured`
+- **Articles**: Require `title`, `description`, `time`, `featured`, `timestamp`, `filename`. Optional: `tags`
+
+### Featured Content System
+
+Featured items are automatically processed and sorted by timestamp using `src/lib/featured.ts`, which filters content marked with `featured: true` in frontmatter.
